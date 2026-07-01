@@ -1,14 +1,6 @@
 ---
 const team = [
   {
-    initials: 'JL',
-    name: 'Jamel Lee',
-    badge: '✦ Mission Commander',
-    role: 'The visionary who turns client chaos into beautifully scoped roadmaps. Jamel speaks both "business" and "technical" fluently — charting the course from first contact to successful orbit.',
-    accent: 'var(--accent-gold)',
-    gradient: 'linear-gradient(135deg, #F59E0B, #D97706)',
-  },
-  {
     initials: 'BP',
     name: 'Bill Pateracki',
     badge: '⚡ Chief Engineer',
@@ -45,15 +37,17 @@ const team = [
           <div class="card-top-border" style={`background: ${member.gradient};`}></div>
 
           <div class="card-body">
-            <div class="avatar" style={`background: ${member.gradient};`}>
-              {member.initials}
+            <div class="card-header">
+              <div class="avatar" style={`background: ${member.gradient};`}>
+                {member.initials}
+              </div>
+              <div class="name-block">
+                <h3>{member.name}</h3>
+                <span class="badge" style={`border-color: ${member.accent}; color: ${member.accent};`}>
+                  {member.badge}
+                </span>
+              </div>
             </div>
-
-            <h3>{member.name}</h3>
-
-            <span class="badge" style={`border-color: ${member.accent}; color: ${member.accent};`}>
-              {member.badge}
-            </span>
 
             <p class="bio">{member.role}</p>
           </div>
@@ -99,8 +93,10 @@ const team = [
 
   .team-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 28px;
+    max-width: 760px;
+    margin: 0 auto;
   }
 
   .team-card {
@@ -116,23 +112,36 @@ const team = [
     padding: 36px 32px;
   }
 
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+
   .avatar {
-    width: 72px;
-    height: 72px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: 'Space Grotesk', sans-serif;
     font-weight: 700;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     color: #fff;
-    margin-bottom: 20px;
+    flex-shrink: 0;
+  }
+
+  .name-block {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
   }
 
   h3 {
     font-size: 1.25rem;
-    margin-bottom: 10px;
+    margin: 0;
   }
 
   .badge {
@@ -143,18 +152,14 @@ const team = [
     padding: 5px 12px;
     border-radius: 100px;
     border: 1px solid;
-    margin-bottom: 18px;
     letter-spacing: 0.02em;
+    align-self: flex-start;
   }
 
   .bio {
     color: var(--text-muted);
     font-size: 0.9rem;
     line-height: 1.7;
-  }
-
-  @media (max-width: 1024px) {
-    .team-grid { grid-template-columns: repeat(2, 1fr); }
   }
 
   @media (max-width: 768px) {

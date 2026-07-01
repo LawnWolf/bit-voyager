@@ -19,15 +19,19 @@
 
           <div class="contact-items">
             <div class="contact-item">
-              <div class="contact-icon" style="background: rgba(6,182,212,0.1); border-color: rgba(6,182,212,0.2);">📧</div>
+              <div class="contact-icon" style="background: rgba(6,182,212,0.1); border-color: rgba(6,182,212,0.2); color: var(--accent-cyan);">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+              </div>
               <div>
                 <p class="item-label">EMAIL</p>
-                <p class="item-value">hello@nebulatechsolutions.com</p>
+                <p class="item-value">hello@bitvoyager.io</p>
               </div>
             </div>
 
             <div class="contact-item">
-              <div class="contact-icon" style="background: rgba(124,58,237,0.1); border-color: rgba(124,58,237,0.2);">📍</div>
+              <div class="contact-icon" style="background: rgba(124,58,237,0.1); border-color: rgba(124,58,237,0.2); color: var(--accent-purple);">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+              </div>
               <div>
                 <p class="item-label">LOCATION</p>
                 <p class="item-value">Remote-first · United States</p>
@@ -35,7 +39,9 @@
             </div>
 
             <div class="contact-item">
-              <div class="contact-icon" style="background: rgba(245,158,11,0.1); border-color: rgba(245,158,11,0.2);">🟢</div>
+              <div class="contact-icon" style="background: rgba(245,158,11,0.1); border-color: rgba(245,158,11,0.2); color: var(--accent-gold);">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+              </div>
               <div>
                 <p class="item-label">AVAILABILITY</p>
                 <p class="item-value availability">Currently accepting new projects</p>
@@ -179,7 +185,11 @@
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    font-size: 1rem;
+  }
+
+  .contact-icon svg {
+    width: 18px;
+    height: 18px;
   }
 
   .item-label {

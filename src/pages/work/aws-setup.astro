@@ -1,0 +1,29 @@
+---
+import ProjectLayout from '../../layouts/ProjectLayout.astro';
+---
+
+<ProjectLayout
+  title="AWS Infrastructure Setup — Bit Voyager"
+  category="// CLOUD & HOSTING"
+  projectTitle="AWS Infrastructure Setup"
+  lead="Moved a growing business off overloaded shared hosting onto a production-grade AWS environment with auto-scaling, automated deployments, and proper monitoring."
+  accent="var(--accent-gold)"
+  accentRgb="245,158,11"
+  stats={[
+    { value: '4 min', label: 'Deploy time' },
+    { value: 'Auto', label: 'Scales on traffic' },
+    { value: 'IaC', label: 'Terraform defined' },
+  ]}
+  challenge="The client's app was running on a $20/month shared host that fell over every time they got a spike in traffic. Deployments meant manually copying files over FTP. There were no backups, no monitoring, and no clear path to growth. They needed a real infrastructure foundation without hiring a full-time DevOps engineer."
+  built={[
+    'AWS account setup with least-privilege IAM roles',
+    'App running on ECS with traffic-based auto-scaling',
+    'RDS database with automated daily snapshots',
+    'CloudFront CDN for static assets and SSL termination',
+    'GitHub Actions CI/CD — push to main, it deploys itself',
+    'CloudWatch dashboards and alerting for uptime and errors',
+    'Infrastructure defined in Terraform — fully reproducible',
+  ]}
+  result="The next traffic spike came and nothing broke. Deployments went from a 30-minute manual process to a 4-minute automated one. The client's team could ship faster and sleep better knowing rollbacks were one command away."
+  pricingNote="Cloud infrastructure projects are scoped individually — cost depends on existing architecture and AWS services required. We also offer a <strong>monthly retainer</strong> for teams that want us to own and manage the infrastructure layer ongoing."
+/>

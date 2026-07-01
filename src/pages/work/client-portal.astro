@@ -1,0 +1,28 @@
+---
+import ProjectLayout from '../../layouts/ProjectLayout.astro';
+---
+
+<ProjectLayout
+  title="Client Portal & Dashboard — Bit Voyager"
+  category="// WEB APPLICATION"
+  projectTitle="Client Portal & Dashboard"
+  lead="A custom web app that replaced a tangle of emails, spreadsheets, and sticky notes with a single place to manage clients, projects, and files."
+  accent="var(--accent-purple)"
+  accentRgb="124,58,237"
+  stats={[
+    { value: '50%', label: 'Less admin time' },
+    { value: '30+', label: 'Clients managed' },
+    { value: '6 wks', label: 'To first launch' },
+  ]}
+  challenge="A service business was managing 30+ active clients entirely through email. Nothing was trackable — requests got lost, deadlines slipped, and staff spent hours every week just figuring out the current status of open work. Off-the-shelf tools either didn't fit their workflow or were priced for companies ten times their size."
+  built={[
+    'Secure login for both staff and clients',
+    'Per-client dashboard with request status and history',
+    'File upload and sharing between client and team',
+    'Internal admin view with workload across all clients',
+    'Email notifications on status changes',
+    'Deployed on AWS with daily backups and role-based access control',
+  ]}
+  result="The team cut their weekly admin overhead in half within the first month. Clients stopped sending follow-up emails because they could see their project status themselves. The business owner could finally see, at a glance, what was overdue and who was handling it."
+  pricingNote="Custom web applications like this typically start at <strong>$5,000</strong> and scale with scope. We scope every project before we quote — timeline is usually 6–10 weeks for a first version."
+/>
