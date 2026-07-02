@@ -1,14 +1,13 @@
 ---
 const stats = [
-  { value: '1 day', label: 'Response time for new inquiries' },
-  { value: '3', label: 'Full-stack engineers on every project' },
-  { value: '2–3 wks', label: 'Typical small business site delivery' },
-  { value: 'AWS', label: 'Cloud platform of choice' },
+  { value: '30+', label: 'Years of combined engineering experience' },
+  { value: 'NASA', label: 'Where we built our craft' },
+  { value: '24 hrs', label: 'Response time guarantee' },
+  { value: '2–3 wks', label: 'Typical simple website delivery' },
 ];
 
 const features = [
-  'No long-term contracts required',
-  'Direct access to the engineers building your product',
+  '100% custom-coded — no Wix, Squarespace, or page builders',
   'Clean, maintainable code you own outright',
   'Mobile-first, SEO-friendly by default',
   'Transparent project tracking',
@@ -21,6 +20,7 @@ const features = [
     <div class="fade-in section-header">
       <p class="eyebrow">// DIFFERENTIATORS</p>
       <h2 id="why-heading">Why Bit Voyager?</h2>
+      <p class="lead-statement">We're NASA engineers. We build things that have to work.</p>
     </div>
 
     <div class="stats-grid">
@@ -68,6 +68,15 @@ const features = [
 
   h2 {
     font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 16px;
+  }
+
+  .lead-statement {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    max-width: 520px;
+    margin: 0 auto;
+    line-height: 1.6;
   }
 
   .stats-grid {

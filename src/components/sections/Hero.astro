@@ -5,11 +5,107 @@ import logoSrc from '../../assets/bit-voyager-white.svg?url';
 <section
   id="home"
   aria-label="Hero"
-  class="nebula-bg hero-section"
+  class="hero-section"
 >
   <canvas aria-hidden="true" class="star-canvas"></canvas>
   <div class="glow-orb glow-cyan" aria-hidden="true"></div>
-  <div class="glow-orb glow-purple" aria-hidden="true"></div>
+  <div class="glow-horizon" aria-hidden="true"></div>
+
+  <!-- Tree silhouette — left side -->
+  <svg
+    class="silhouette-trees"
+    style="position:absolute;bottom:0;left:0;width:min(40%,540px);height:auto;pointer-events:none;z-index:1;"
+    viewBox="0 0 420 280"
+    preserveAspectRatio="xMinYMax meet"
+    aria-hidden="true"
+  >
+    <g style="fill: var(--bg-surface)">
+      <!-- Pine 1 — small, far left -->
+      <polygon points="30,210 23,223 37,223"/>
+      <polygon points="30,218 20,234 40,234"/>
+      <polygon points="30,227 15,248 45,248"/>
+      <polygon points="30,240 5,280 55,280"/>
+
+      <!-- Pine 2 — medium -->
+      <polygon points="72,130 67,148 77,148"/>
+      <polygon points="72,143 62,160 82,160"/>
+      <polygon points="72,155 62,183 82,183"/>
+      <polygon points="72,173 56,212 88,212"/>
+      <polygon points="72,196 40,252 104,252"/>
+      <polygon points="72,228 30,280 114,280"/>
+
+      <!-- Pine 4 — tall (50% taller) -->
+      <polygon points="168,52 159,77 177,77"/>
+      <polygon points="168,70 155,103 181,103"/>
+      <polygon points="168,90 150,130 186,130"/>
+      <polygon points="168,114 130,180 206,180"/>
+      <polygon points="168,150 120,212 216,212"/>
+      <polygon points="168,185 110,248 226,248"/>
+      <polygon points="168,218 100,280 236,280"/>
+
+      <!-- Pine 6 — tall (50% shorter) -->
+      <polygon points="270,206 261,219 279,219"/>
+      <polygon points="270,215 256,233 284,233"/>
+      <polygon points="270,225 248,247 292,247"/>
+      <polygon points="270,237 232,268 308,268"/>
+      <polygon points="270,257 220,280 320,280"/>
+
+      <!-- Ground fill -->
+      <rect x="0" y="272" width="420" height="8"/>
+    </g>
+  </svg>
+
+  <!-- Building silhouette — right side. Each building is a separate rect for clear separation. -->
+  <svg
+    class="silhouette-buildings"
+    style="position:absolute;bottom:0;right:0;width:min(54%,720px);height:auto;pointer-events:none;z-index:1;"
+    viewBox="0 0 600 300"
+    preserveAspectRatio="xMaxYMax meet"
+    aria-hidden="true"
+  >
+    <g style="fill: var(--bg-surface)">
+      <rect x="88"  y="210" width="44" height="90"/>   <!-- B0 smallest           -->
+      <rect x="170" y="144" width="55" height="156"/>  <!-- B3 tall (80% height)  -->
+      <rect x="247" y="98"  width="48" height="202"/>  <!-- B4 taller    gap:22 -->
+      <rect x="305" y="46"  width="58" height="254"/>  <!-- B5 tallest   gap:10 -->
+      <rect x="331" y="5"   width="4"  height="41"/>   <!-- B5 antenna         -->
+      <rect x="401" y="165" width="48" height="135"/>  <!-- B6 short     gap:38 -->
+      <rect x="477" y="60"  width="50" height="240"/>  <!-- B7 very tall gap:28 -->
+      <rect x="542" y="145" width="53" height="155"/>  <!-- B8 medium    gap:15 -->
+    </g>
+
+    <!-- Windows — amber -->
+    <g fill="#f59e0b">
+      <!-- B3 windows -->
+      <rect x="178" y="152" width="5" height="7"/>
+      <rect x="207" y="218" width="5" height="7"/>
+
+      <!-- B4 windows -->
+      <rect x="254" y="107" width="5" height="7"/>
+      <rect class="win-flicker-a" x="269" y="195" width="5" height="7"/>
+      <rect x="269" y="239" width="5" height="7"/>
+
+      <!-- B5 windows -->
+      <rect x="354" y="78"  width="5" height="7"/>
+      <rect class="win-flicker-b" x="327" y="122" width="5" height="7"/>
+      <rect x="327" y="166" width="5" height="7"/>
+      <rect class="win-flicker-c" x="342" y="232" width="5" height="7"/>
+      <rect x="327" y="276" width="5" height="7"/>
+
+      <!-- B6 windows -->
+      <rect x="408" y="185" width="5" height="7"/>
+      <rect x="439" y="251" width="5" height="7"/>
+
+      <!-- B7 windows -->
+      <rect class="win-flicker-a" x="484" y="143" width="5" height="7"/>
+      <rect x="499" y="209" width="5" height="7"/>
+      <rect x="484" y="231" width="5" height="7"/>
+
+      <!-- B8 windows -->
+      <rect x="549" y="169" width="5" height="7"/>
+      <rect x="564" y="235" width="5" height="7"/>
+    </g>
+  </svg>
 
   <div class="hero-content">
 
@@ -17,7 +113,7 @@ import logoSrc from '../../assets/bit-voyager-white.svg?url';
       <img src={logoSrc} alt="" aria-hidden="true" class="company-logo" />
       <span class="name-group">
         <span class="name-text">bit voyager</span>
-        <span class="tagline">Charting Your Digital Journey</span>
+        <span class="tagline">charting your digital journey</span>
       </span>
     </div>
 
@@ -46,6 +142,15 @@ import logoSrc from '../../assets/bit-voyager-white.svg?url';
     padding: 120px 24px 160px;
     position: relative;
     overflow: hidden;
+    background: linear-gradient(
+      to bottom,
+      #020409 0%,
+      #07091e 28%,
+      #0c0f32 55%,
+      #130f3a 75%,
+      #1c1448 88%,
+      #251b55 100%
+    );
   }
 
   .star-canvas {
@@ -67,24 +172,64 @@ import logoSrc from '../../assets/bit-voyager-white.svg?url';
 
   .glow-cyan {
     width: 700px;
-    height: 500px;
-    top: -120px;
+    height: 400px;
+    top: -100px;
     left: 50%;
     transform: translateX(-50%);
-    background: radial-gradient(ellipse, rgba(6,182,212,0.14) 0%, transparent 70%);
+    background: radial-gradient(ellipse, rgba(6,182,212,0.08) 0%, transparent 70%);
   }
 
-  .glow-purple {
-    width: 500px;
-    height: 500px;
-    bottom: 80px;
-    right: -100px;
-    background: radial-gradient(ellipse, rgba(124,58,237,0.1) 0%, transparent 70%);
+  /* City light glow rising from the horizon */
+  .glow-horizon {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 130%;
+    height: 45%;
+    background: radial-gradient(
+      ellipse 70% 100% at 50% 100%,
+      rgba(100, 60, 200, 0.22) 0%,
+      rgba(245, 158, 11, 0.05) 35%,
+      transparent 65%
+    );
+    pointer-events: none;
+    z-index: 0;
   }
 
+  /* ── Silhouette sizing (inline style handles positioning) ── */
+  .silhouette-trees,
+  .silhouette-buildings {
+    display: block;
+  }
+
+  /* ── Window flicker animations ── */
+  @keyframes flicker-a {
+    0%, 100% { opacity: 1; }
+    44%       { opacity: 1; }
+    47%       { opacity: 0.3; }
+    50%       { opacity: 1; }
+  }
+
+  @keyframes flicker-b {
+    0%,  100% { opacity: 0.9; }
+    20%        { opacity: 0.9; }
+    22%        { opacity: 0.25; }
+    25%        { opacity: 0.9; }
+    80%        { opacity: 0.9; }
+    83%        { opacity: 0.5; }
+    85%        { opacity: 0.9; }
+  }
+
+  .win-flicker-a { animation: flicker-a 4.2s ease-in-out infinite; }
+  .win-flicker-b { animation: flicker-b 7.1s ease-in-out infinite; }
+  .win-flicker-c { animation: flicker-a 5.8s ease-in-out 1.9s infinite; }
+  .win-flicker-d { animation: flicker-b 6.3s ease-in-out 0.7s infinite; }
+
+  /* ── Content ── */
   .hero-content {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     max-width: 900px;
     margin: 0 auto;
     text-align: center;
@@ -126,7 +271,7 @@ import logoSrc from '../../assets/bit-voyager-white.svg?url';
     color: var(--text-primary);
     letter-spacing: -0.03em;
     line-height: 1;
-    margin-bottom: 40px;
+    margin-bottom: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -201,7 +346,7 @@ import logoSrc from '../../assets/bit-voyager-white.svg?url';
     bottom: 32px;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 1;
+    z-index: 2;
   }
 
   .scroll-indicator {
@@ -229,6 +374,11 @@ import logoSrc from '../../assets/bit-voyager-white.svg?url';
     0% { opacity: 1; transform: translateX(-50%) translateY(0); }
     80% { opacity: 0; transform: translateX(-50%) translateY(14px); }
     100% { opacity: 0; transform: translateX(-50%) translateY(0); }
+  }
+
+  @media (max-width: 640px) {
+    .silhouette-buildings { width: min(70%, 400px) !important; }
+    .silhouette-trees     { width: min(50%, 290px) !important; }
   }
 </style>
 
@@ -263,9 +413,10 @@ import logoSrc from '../../assets/bit-voyager-white.svg?url';
       canvas.height = section.offsetHeight;
       stars.length = 0;
       for (let i = 0; i < STAR_COUNT; i++) {
+        const raw = Math.random();
         stars.push({
           x: Math.random() * canvas.width,
-          y: Math.random() * canvas.height,
+          y: raw * raw * canvas.height,
           r: Math.random() * 1.5 + 0.5,
           phase: Math.random() * Math.PI * 2,
           speed: Math.random() * 0.8 + 0.3,
@@ -277,7 +428,10 @@ import logoSrc from '../../assets/bit-voyager-white.svg?url';
       const sec = t * 0.001;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       for (const s of stars) {
-        const alpha = 0.15 + 0.85 * (0.5 + 0.5 * Math.sin(sec * s.speed + s.phase));
+        const yFade = Math.pow(1 - (s.y / canvas.height), 1.8);
+        const twinkle = 0.15 + 0.85 * (0.5 + 0.5 * Math.sin(sec * s.speed + s.phase));
+        const alpha = twinkle * yFade;
+        if (alpha < 0.02) continue;
         ctx.beginPath();
         ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(220, 235, 255, ${alpha.toFixed(3)})`;
@@ -290,7 +444,6 @@ import logoSrc from '../../assets/bit-voyager-white.svg?url';
     window.addEventListener('resize', init);
     requestAnimationFrame(draw);
 
-    // Typewriter word cycling
     const words = ['websites', 'enterprise apps', 'cloud infrastructure'];
     let wordIdx = 0;
     let charIdx = 0;
