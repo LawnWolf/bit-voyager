@@ -25,7 +25,7 @@ No test runner or linter is configured.
 - [src/layouts/ProjectLayout.astro](src/layouts/ProjectLayout.astro) — case study template; accepts `accent` (hex) and `accentRgb` props that set `--accent` / `--accent-rgb` CSS custom properties for per-project theming
 - [src/pages/work/](src/pages/work/) — individual case study pages that pass data as props to `ProjectLayout`
 
-**Styles**: Global design tokens and shared utilities live in [src/styles/global.css](src/styles/global.css). Key shared classes: `.glass-card`, `.nebula-bg`, `.gradient-text`, `.gradient-text-gold`, `.btn-primary`, `.btn-ghost`, `.fade-in`, `.marquee-track`. Component-specific styles are co-located in each component's `<style>` block.
+**Styles**: Global design tokens and shared utilities live in [src/styles/global.css](src/styles/global.css). Key shared classes: `.glass-card`, `.bitvoyage-bg`, `.gradient-text`, `.gradient-text-gold`, `.btn-primary`, `.btn-ghost`, `.fade-in`, `.marquee-track`. Component-specific styles are co-located in each component's `<style>` block.
 
 **CSS custom properties** (defined in `global.css`):
 - Colors: `--bg-base`, `--bg-surface`, `--bg-card`, `--accent-purple`, `--accent-cyan`, `--accent-gold`, `--text-primary`, `--text-muted`, `--border-subtle`
