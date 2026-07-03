@@ -1,17 +1,35 @@
 ---
-const stats = [
-  { value: '30+', label: 'Years of combined engineering experience' },
-  { value: 'NASA', label: 'Where we built our craft' },
-  { value: '24 hrs', label: 'Response time guarantee' },
-  { value: '2–3 wks', label: 'Typical simple website delivery' },
-];
-
-const features = [
-  '100% custom-coded — no Wix, Squarespace, or page builders',
-  'Clean, maintainable code you own outright',
-  'Mobile-first, SEO-friendly by default',
-  'Transparent project tracking',
-  'Ongoing support & maintenance available',
+const differentiators = [
+  {
+    title: '30+ Years of Experience',
+    desc: 'Two senior engineers. No juniors, no hand-offs, no learning on your dime.',
+    icon: '<path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"/>',
+  },
+  {
+    title: 'Senior-Level Engineers',
+    desc: 'Decades of hands-on experience building reliable software across a wide range of technologies and industries.',
+    icon: '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/>',
+  },
+  {
+    title: '100% Custom Built',
+    desc: 'No templates. No page builders. Just clean, maintainable software you own.',
+    icon: '<polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>',
+  },
+  {
+    title: 'End-to-End Solutions',
+    desc: 'From strategy and design to deployment and support — one team from start to finish.',
+    icon: '<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>',
+  },
+  {
+    title: 'Built to Scale',
+    desc: 'Built to grow with your business—from your first customer to your ten-thousandth.',
+    icon: '<polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/>',
+  },
+  {
+    title: 'Direct Communication',
+    desc: 'Always work directly with the engineers building your project — not salespeople or account managers.',
+    icon: '<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>',
+  },
 ];
 ---
 
@@ -20,24 +38,21 @@ const features = [
     <div class="fade-in section-header">
       <p class="eyebrow">// DIFFERENTIATORS</p>
       <h2 id="why-heading">Why Bit Voyager?</h2>
-      <p class="lead-statement">We're NASA engineers. We build things that have to work.</p>
+      <p class="lead-statement">Quality over quantity. Every time.</p>
     </div>
 
-    <div class="stats-grid">
-      {stats.map((stat, i) => (
-        <div class="glass-card fade-in stat-block" style={`transition-delay: ${i * 0.1}s;`}>
-          <p class="stat-value gradient-text">{stat.value}</p>
-          <p class="stat-label">{stat.label}</p>
-        </div>
-      ))}
-    </div>
-
-    <div class="fade-in features-grid">
-      {features.map((feature) => (
-        <div class="feature-item">
-          <span class="check">✓</span>
-          <span>{feature}</span>
-        </div>
+    <div class="differentiators-grid">
+      {differentiators.map((item, i) => (
+        <article
+          class="glass-card fade-in diff-card"
+          style={`transition-delay: ${i * 0.1}s;`}
+        >
+          <div class="diff-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" set:html={item.icon} />
+          </div>
+          <h3>{item.title}</h3>
+          <p class="diff-desc">{item.desc}</p>
+        </article>
       ))}
     </div>
   </div>
@@ -55,7 +70,7 @@ const features = [
 
   .section-header {
     text-align: center;
-    margin-bottom: 80px;
+    margin-bottom: 64px;
   }
 
   .eyebrow {
@@ -78,57 +93,59 @@ const features = [
     line-height: 1.6;
   }
 
-  .stats-grid {
+  .differentiators-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: 24px;
-    margin-bottom: 80px;
-  }
-
-  .stat-block {
-    padding: 40px 24px;
-    text-align: center;
-  }
-
-  .stat-value {
-    font-size: clamp(2.2rem, 5vw, 3.5rem);
-    font-weight: 700;
-    margin-bottom: 12px;
-    line-height: 1;
-  }
-
-  .stat-label {
-    color: var(--text-muted);
-    font-size: 0.88rem;
-    line-height: 1.5;
-  }
-
-  .features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 16px;
-    max-width: 900px;
+    max-width: 1100px;
     margin: 0 auto;
   }
 
-  .feature-item {
+  .diff-card {
+    grid-column: span 2;
+    padding: 32px 28px;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     gap: 12px;
   }
 
-  .check {
+  .diff-icon {
+    width: 28px;
+    height: 28px;
     color: var(--accent-cyan);
-    font-size: 1.1rem;
     flex-shrink: 0;
   }
 
-  .feature-item span:last-child {
+  .diff-icon svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  h3 {
+    font-size: 1.05rem;
     color: var(--text-primary);
-    font-size: 0.95rem;
+    margin: 0;
+  }
+
+  .diff-desc {
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    line-height: 1.65;
+    margin: 0;
   }
 
   @media (max-width: 1024px) {
-    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .differentiators-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .diff-card,
+    .diff-card:nth-child(4),
+    .diff-card:nth-child(5) {
+      grid-column: span 1;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .differentiators-grid { grid-template-columns: 1fr; }
   }
 </style>

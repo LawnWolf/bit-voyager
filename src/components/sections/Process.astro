@@ -1,17 +1,17 @@
 ---
 const steps = [
-  { num: '01', title: 'Discovery', desc: 'We dig into your vision, constraints, and goals to understand the full picture.' },
-  { num: '02', title: 'Architecture', desc: 'We design a system built for scale from the start — not bolted on later.' },
-  { num: '03', title: 'Build', desc: 'We ship iteratively with full transparency, weekly demos, and zero surprises.' },
-  { num: '04', title: 'Launch & Scale', desc: 'We deploy, monitor, and grow with you long after the initial launch.' },
+  { num: '01', title: 'Discovery', desc: 'We start by understanding your business, goals, and challenges so we can recommend the right solution—not just the easiest one.' },
+  { num: '02', title: 'Design', desc: 'We create a thoughtful plan for your project, ensuring it\'s built to perform today and adapt as your business grows.' },
+  { num: '03', title: 'Build', desc: 'We develop your solution with regular updates, open communication, and no surprises along the way.' },
+  { num: '04', title: 'Launch & Support', desc: 'Once everything is ready, we launch with confidence and remain available to support, improve, and expand your solution over time.' },
 ];
 ---
 
 <section id="process" aria-labelledby="process-heading" class="process-section">
   <div class="container">
     <div class="fade-in section-header">
-      <p class="eyebrow">// HOW WE WORK</p>
-      <h2 id="process-heading">The Process</h2>
+      <p class="eyebrow">// THE PROCESS</p>
+      <h2 id="process-heading">How We Work</h2>
     </div>
 
     <div class="process-grid">
@@ -67,6 +67,8 @@ const steps = [
   .process-step {
     position: relative;
     text-align: center;
+    display: flex;
+    flex-direction: column;
   }
 
   .process-line {
@@ -98,6 +100,7 @@ const steps = [
 
   .step-card {
     padding: 24px;
+    flex: 1;
   }
 
   h3 {
