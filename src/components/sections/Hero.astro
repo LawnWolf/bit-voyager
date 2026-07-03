@@ -20,6 +20,9 @@ import logoSrc from '../../assets/bit-voyager-white.svg?url';
     aria-hidden="true"
   >
     <g style="fill: var(--bg-surface)">
+      <!-- Hill — curved uneven slope, highest at left edge, trends down toward center -->
+      <path d="M 0,280 L 0,198 C 18,205 38,218 58,220 C 72,224 82,208 102,212 C 118,214 135,210 155,224 C 172,228 188,236 212,242 C 238,248 265,254 290,258 C 318,262 355,265 390,268 L 420,270 L 420,280 Z"/>
+
       <!-- Pine 1 — small, far left -->
       <polygon points="30,210 23,223 37,223"/>
       <polygon points="30,218 20,234 40,234"/>
@@ -49,9 +52,6 @@ import logoSrc from '../../assets/bit-voyager-white.svg?url';
       <polygon points="270,225 248,247 292,247"/>
       <polygon points="270,237 232,268 308,268"/>
       <polygon points="270,257 220,280 320,280"/>
-
-      <!-- Ground fill -->
-      <rect x="0" y="272" width="420" height="8"/>
     </g>
   </svg>
 
@@ -64,14 +64,24 @@ import logoSrc from '../../assets/bit-voyager-white.svg?url';
     aria-hidden="true"
   >
     <g style="fill: var(--bg-surface)">
-      <rect x="88"  y="210" width="44" height="90"/>   <!-- B0 smallest           -->
-      <rect x="170" y="144" width="55" height="156"/>  <!-- B3 tall (80% height)  -->
-      <rect x="247" y="98"  width="48" height="202"/>  <!-- B4 taller    gap:22 -->
-      <rect x="305" y="46"  width="58" height="254"/>  <!-- B5 tallest   gap:10 -->
-      <rect x="331" y="5"   width="4"  height="41"/>   <!-- B5 antenna         -->
-      <rect x="401" y="165" width="48" height="135"/>  <!-- B6 short     gap:38 -->
-      <rect x="477" y="60"  width="50" height="240"/>  <!-- B7 very tall gap:28 -->
-      <rect x="542" y="145" width="53" height="155"/>  <!-- B8 medium    gap:15 -->
+      <!-- Ground plane -->
+      <rect x="0"   y="265" width="600" height="35"/>
+      <!-- Buildings (bases at y=265) -->
+      <rect x="88"  y="210" width="44"  height="55"/>   <!-- B0 smallest  -->
+      <rect x="170" y="144" width="55"  height="121"/>  <!-- B3           -->
+      <rect x="247" y="98"  width="48"  height="167"/>  <!-- B4           -->
+      <rect x="305" y="46"  width="58"  height="219"/>  <!-- B5 tallest   -->
+      <rect x="331" y="5"   width="4"   height="41"/>   <!-- B5 antenna   -->
+      <rect x="401" y="165" width="48"  height="100"/>  <!-- B6 short     -->
+      <rect x="477" y="60"  width="50"  height="205"/>  <!-- B7 very tall -->
+      <rect x="542" y="145" width="53"  height="120"/>  <!-- B8 medium    -->
+      <!-- Ground connectors between buildings (variable heights) -->
+      <rect x="132" y="240" width="38"  height="25"/>   <!-- B0→B3 -->
+      <rect x="225" y="230" width="22"  height="35"/>   <!-- B3→B4 -->
+      <rect x="295" y="215" width="10"  height="50"/>   <!-- B4→B5 -->
+      <rect x="363" y="245" width="38"  height="20"/>   <!-- B5→B6 -->
+      <rect x="449" y="223" width="28"  height="42"/>   <!-- B6→B7 -->
+      <rect x="527" y="235" width="15"  height="30"/>   <!-- B7→B8 -->
     </g>
 
     <!-- Windows — amber -->
@@ -90,7 +100,6 @@ import logoSrc from '../../assets/bit-voyager-white.svg?url';
       <rect class="win-flicker-b" x="327" y="122" width="5" height="7"/>
       <rect x="327" y="166" width="5" height="7"/>
       <rect class="win-flicker-c" x="342" y="232" width="5" height="7"/>
-      <rect x="327" y="276" width="5" height="7"/>
 
       <!-- B6 windows -->
       <rect x="408" y="185" width="5" height="7"/>
@@ -106,6 +115,8 @@ import logoSrc from '../../assets/bit-voyager-white.svg?url';
       <rect x="564" y="235" width="5" height="7"/>
     </g>
   </svg>
+
+  <div class="ground-plane" aria-hidden="true"></div>
 
   <div class="hero-content">
 
@@ -201,6 +212,17 @@ import logoSrc from '../../assets/bit-voyager-white.svg?url';
   .silhouette-trees,
   .silhouette-buildings {
     display: block;
+  }
+
+  /* Fills center gap between the two SVGs so ground line is continuous */
+  .ground-plane {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 35px;
+    background: var(--bg-surface);
+    z-index: 0;
   }
 
   /* ── Window flicker animations ── */
