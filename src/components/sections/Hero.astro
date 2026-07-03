@@ -24,18 +24,24 @@ import logoSrc from '../../assets/bit-voyager-white.svg?url';
       <path d="M 0,280 L 0,198 C 18,205 38,218 58,220 C 72,224 82,208 102,212 C 118,214 135,210 155,224 C 172,228 188,236 212,242 C 238,248 265,254 290,258 C 318,262 355,265 390,268 L 420,270 L 420,280 Z"/>
 
       <!-- Pine 1 — small, far left -->
-      <polygon points="30,210 23,223 37,223"/>
-      <polygon points="30,218 20,234 40,234"/>
-      <polygon points="30,227 15,248 45,248"/>
-      <polygon points="30,240 5,280 55,280"/>
+      <polygon points="10,210 3,223 17,223"/>
+      <polygon points="10,218 0,234 20,234"/>
+      <polygon points="10,227 -5,248 25,248"/>
+      <polygon points="10,240 -15,280 35,280"/>
 
       <!-- Pine 2 — medium -->
-      <polygon points="72,130 67,148 77,148"/>
-      <polygon points="72,143 62,160 82,160"/>
-      <polygon points="72,155 62,183 82,183"/>
-      <polygon points="72,173 56,212 88,212"/>
-      <polygon points="72,196 40,252 104,252"/>
-      <polygon points="72,228 30,280 114,280"/>
+      <polygon points="52,130 47,148 57,148"/>
+      <polygon points="52,143 42,160 62,160"/>
+      <polygon points="52,155 42,183 62,183"/>
+      <polygon points="52,173 36,212 68,212"/>
+      <polygon points="52,196 20,252 84,252"/>
+      <polygon points="52,228 10,280 94,280"/>
+
+      <!-- Pine 3 — small, between Pine 2 and Pine 4 -->
+      <polygon points="90,172 84,183 96,183"/>
+      <polygon points="90,180 78,198 102,198"/>
+      <polygon points="90,191 70,218 110,218"/>
+      <polygon points="90,210 54,252 126,252"/>
 
       <!-- Pine 4 — tall (50% taller) -->
       <polygon points="168,52 159,77 177,77"/>
@@ -87,36 +93,33 @@ import logoSrc from '../../assets/bit-voyager-white.svg?url';
     <!-- Windows — amber -->
     <g fill="#f59e0b">
       <!-- B3 windows -->
-      <rect x="178" y="152" width="5" height="7"/>
-      <rect x="207" y="218" width="5" height="7"/>
+      <rect x="208" y="152" width="5" height="7"/>
+      <rect x="180" y="218" width="5" height="7"/>
 
       <!-- B4 windows -->
       <rect x="254" y="107" width="5" height="7"/>
       <rect class="win-flicker-a" x="269" y="195" width="5" height="7"/>
-      <rect x="269" y="239" width="5" height="7"/>
 
       <!-- B5 windows -->
       <rect x="354" y="78"  width="5" height="7"/>
       <rect class="win-flicker-b" x="327" y="122" width="5" height="7"/>
       <rect x="327" y="166" width="5" height="7"/>
-      <rect class="win-flicker-c" x="342" y="232" width="5" height="7"/>
 
       <!-- B6 windows -->
       <rect x="408" y="185" width="5" height="7"/>
-      <rect x="439" y="251" width="5" height="7"/>
 
       <!-- B7 windows -->
       <rect class="win-flicker-a" x="484" y="143" width="5" height="7"/>
       <rect x="499" y="209" width="5" height="7"/>
-      <rect x="484" y="231" width="5" height="7"/>
 
       <!-- B8 windows -->
       <rect x="549" y="169" width="5" height="7"/>
-      <rect x="564" y="235" width="5" height="7"/>
     </g>
   </svg>
 
-  <div class="ground-plane" aria-hidden="true"></div>
+  <svg class="ground-plane" viewBox="0 0 1000 45" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M 0,45 L 0,16 C 80,13 160,20 260,15 C 340,10 420,18 520,13 C 600,9 700,17 800,12 C 880,8 940,16 1000,11 L 1000,45 Z" fill="var(--bg-surface)"/>
+  </svg>
 
   <div class="hero-content">
 
@@ -124,7 +127,7 @@ import logoSrc from '../../assets/bit-voyager-white.svg?url';
       <img src={logoSrc} alt="" aria-hidden="true" class="company-logo" />
       <span class="name-group">
         <span class="name-text">bit voyager</span>
-        <span class="tagline">charting your digital journey</span>
+        <span class="tagline">Charting your digital journey</span>
       </span>
     </div>
 
@@ -220,8 +223,7 @@ import logoSrc from '../../assets/bit-voyager-white.svg?url';
     bottom: 0;
     left: 0;
     right: 0;
-    height: 35px;
-    background: var(--bg-surface);
+    height: 45px;
     z-index: 0;
   }
 
@@ -288,10 +290,7 @@ import logoSrc from '../../assets/bit-voyager-white.svg?url';
   .tagline {
     font-weight: 500;
     letter-spacing: 0.04em;
-    background: linear-gradient(135deg, var(--accent-purple), var(--accent-cyan));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--text-muted);
     margin-top: 20px;
     white-space: nowrap;
     display: block;

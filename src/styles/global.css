@@ -148,8 +148,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-ghost:hover {
-  border-color: var(--accent-cyan);
-  background: rgba(6, 182, 212, 0.06);
+  border-color: var(--accent, var(--accent-cyan));
+  background: var(--glow, rgba(6, 182, 212, 0.06));
   transform: translateY(-2px);
 }
 
