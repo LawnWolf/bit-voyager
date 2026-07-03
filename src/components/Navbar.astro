@@ -4,7 +4,8 @@ import logoSrc from '../assets/bit-voyager-white.svg?url';
 const navLinks = [
   { label: 'Home', href: '#home' },
   { label: 'Services', href: '#services' },
-  { label: 'Pricing', href: '#pricing' },
+  { label: 'Why Us', href: '#pitch' },
+  { label: 'Process', href: '#process' },
   { label: 'Team', href: '#team' },
   { label: 'Contact', href: '#contact' },
 ];
@@ -57,7 +58,7 @@ const navLinks = [
     <ul role="list" class="nav-links" style="
       display: flex;
       align-items: center;
-      gap: 36px;
+      gap: 32px;
       list-style: none;
       margin: 0;
       padding: 0;
@@ -184,7 +185,7 @@ const navLinks = [
 </nav>
 
 <style is:global>
-  @media (max-width: 768px) {
+  @media (max-width: 960px) {
     .nav-links,
     .desktop-cta {
       display: none !important;

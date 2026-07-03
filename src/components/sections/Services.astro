@@ -3,14 +3,15 @@ const projects = [
   {
     category: 'Website',
     title: 'Promote Your Business',
-    desc: 'A fast, mobile-friendly website for businesses ready to establish their online presence.',    
+    range: '$500 – $4,000',
+    desc: 'A fast, mobile-friendly website for businesses ready to establish their online presence.',
     href: '/bit-voyager/work/small-business-site',
     accent: 'var(--accent-cyan)',
     border: 'rgba(6,182,212,0.25)',
     glow: 'rgba(6,182,212,0.13)',
     icon: '<circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>',
     items: [
-      '100% custom-built — no Wix, Squarespace, or page builders',
+      '100% custom built—no Wix, Squarespace, or page builders',
       'Easy content updates with a built-in CMS',
       'Mobile-friendly on every device',
       'SEO-ready from day one',
@@ -20,6 +21,7 @@ const projects = [
   {
     category: 'Enterprise Application',
     title: 'Run Your Business',
+    range: 'Starting at $5,000',
     desc: 'Custom software that streamlines your operations and gives your team the tools they need to work more efficiently.',
     href: '/bit-voyager/work/client-portal',
     accent: 'var(--accent-purple)',
@@ -38,6 +40,7 @@ const projects = [
   {
     category: 'Infrastructure & Consulting',
     title: 'Power Your Business',
+    range: 'Custom quote',
     desc: 'From cloud infrastructure to on-site hardware, we help businesses build, optimize, and maintain the technology they rely on every day.',
     href: '/bit-voyager/work/aws-setup',
     accent: 'var(--accent-gold)',
@@ -58,7 +61,7 @@ const projects = [
 <section id="services" aria-labelledby="work-heading" class="services-section">
   <div class="container">
     <div class="fade-in section-header">
-      <p class="eyebrow">// SERVICES</p>
+      <p class="eyebrow">// OUR SERVICES</p>
       <h2 id="work-heading">What We Do</h2>
       <p class="subtitle">Thoughtfully designed. Expertly engineered.</p>
     </div>
@@ -88,9 +91,7 @@ const projects = [
             ))}
           </ul>
 
-          <a href={project.href} class="learn-more" style={`color: ${project.accent};`}>
-            Learn more →
-          </a>
+          <p class="price-range">{project.range}</p>
         </article>
       ))}
     </div>
@@ -179,6 +180,15 @@ const projects = [
     font-size: 1.15rem;
     color: var(--text-primary);
     margin: 0;
+  }
+
+  .price-range {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
+    margin-top: 20px;
+    line-height: 1.2;
   }
 
   .desc {
