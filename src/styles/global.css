@@ -6,7 +6,7 @@
 :root {
   --bg-base: #050810;
   --bg-surface: #0D1117;
-  --bg-card: rgba(255, 255, 255, 0.08);
+  --bg-card: rgba(255, 255, 255, 0.04);
   --accent-purple: #7C3AED;
   --accent-cyan: #06B6D4;
   --accent-gold: #F59E0B;
@@ -64,11 +64,10 @@ body {
 /* ── Glassmorphism Card ── */
 .glass-card {
   background: var(--bg-card);
-  border: 1px solid rgba(255, 255, 255, 0.11);
+  border: 1px solid var(--border-subtle);
   border-radius: 16px;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35), 0 1px 0 rgba(255, 255, 255, 0.07) inset;
   transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
