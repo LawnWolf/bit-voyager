@@ -20,7 +20,12 @@ const { title, description = 'Bit Voyager — Charting your digital journey.' } 
     <meta name="theme-color" content="#050810" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
-
+    <!-- Apply saved theme before paint to prevent flash -->
+    <script is:inline>
+      if (localStorage.getItem('theme') === 'light') {
+        document.documentElement.classList.add('light');
+      }
+    </script>
   </head>
   <body>
     <Navbar />

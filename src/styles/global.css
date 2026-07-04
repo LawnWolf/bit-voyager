@@ -6,13 +6,24 @@
 :root {
   --bg-base: #050810;
   --bg-surface: #0D1117;
-  --bg-card: rgba(255, 255, 255, 0.04);
+  --bg-card: rgba(255, 255, 255, 0.08);
   --accent-purple: #7C3AED;
   --accent-cyan: #06B6D4;
   --accent-gold: #F59E0B;
   --text-primary: #F1F5F9;
   --text-muted: #64748B;
   --border-subtle: rgba(255, 255, 255, 0.08);
+  --silhouette-fill: var(--bg-surface);
+}
+
+html.light {
+  --bg-base: #F8FAFC;
+  --bg-surface: #EFF2F7;
+  --bg-card: rgba(255, 255, 255, 0.85);
+  --text-primary: #0F172A;
+  --text-muted: #64748B;
+  --border-subtle: rgba(0, 0, 0, 0.09);
+  --silhouette-fill: #1E293B;
 }
 
 /* ── Base Reset ── */
@@ -45,20 +56,58 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--text-primary);
 }
 
+/* ── Theme transitions ── */
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 /* ── Glassmorphism Card ── */
 .glass-card {
   background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
+  border: 1px solid rgba(255, 255, 255, 0.11);
   border-radius: 16px;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35), 0 1px 0 rgba(255, 255, 255, 0.07) inset;
+  transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 .glass-card:hover {
   border-color: rgba(124, 58, 237, 0.4);
   transform: translateY(-4px);
   box-shadow: 0 20px 40px rgba(124, 58, 237, 0.12);
+}
+
+html.light .glass-card {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.07);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.055), 0 0 1px rgba(0, 0, 0, 0.04);
+}
+
+html.light .glass-card:hover {
+  border-color: rgba(124, 58, 237, 0.22);
+  box-shadow: 0 10px 32px rgba(124, 58, 237, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* ── Light mode section backgrounds ── */
+html.light .services-section {
+  background: linear-gradient(to bottom, #f8fafc, #ecfeff 30%, #f8fafc 75%) !important;
+}
+
+html.light .why-section {
+  background: linear-gradient(to bottom, #faf5ff, #f8fafc 30%) !important;
+}
+
+html.light .process-section {
+  background: #ffffff !important;
+}
+
+html.light .team-section {
+  background: linear-gradient(to bottom, #f8fafc, #faf5ff) !important;
+}
+
+html.light .contact-section {
+  background: linear-gradient(to bottom, #eff6ff, #f8fafc 30%) !important;
 }
 
 /* ── Bit Voyage Hero Gradient ── */
@@ -199,4 +248,11 @@ section {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(124, 58, 237, 0.7);
+}
+
+html.light ::-webkit-scrollbar-thumb {
+  background: rgba(124, 58, 237, 0.25);
+}
+html.light ::-webkit-scrollbar-thumb:hover {
+  background: rgba(124, 58, 237, 0.5);
 }

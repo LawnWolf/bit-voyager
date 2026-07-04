@@ -19,7 +19,7 @@ import logoSrc from '../../assets/bit-voyager-white.svg?url';
     preserveAspectRatio="xMinYMax meet"
     aria-hidden="true"
   >
-    <g style="fill: var(--bg-surface)">
+    <g style="fill: var(--silhouette-fill)">
       <!-- Hill — curved uneven slope, highest at left edge, trends down toward center -->
       <path d="M 0,280 L 0,198 C 18,205 38,218 58,220 C 72,224 82,208 102,212 C 118,214 135,210 155,224 C 172,228 188,236 212,242 C 238,248 265,254 290,258 C 318,262 355,265 390,268 L 420,270 L 420,280 Z"/>
 
@@ -69,7 +69,7 @@ import logoSrc from '../../assets/bit-voyager-white.svg?url';
     preserveAspectRatio="xMaxYMax meet"
     aria-hidden="true"
   >
-    <g style="fill: var(--bg-surface)">
+    <g style="fill: var(--silhouette-fill)">
       <!-- Ground plane -->
       <rect x="0"   y="265" width="600" height="35"/>
       <!-- Buildings (bases at y=265) -->
@@ -118,7 +118,7 @@ import logoSrc from '../../assets/bit-voyager-white.svg?url';
   </svg>
 
   <svg class="ground-plane" viewBox="0 0 1000 45" preserveAspectRatio="none" aria-hidden="true">
-    <path d="M 0,45 L 0,16 C 80,13 160,20 260,15 C 340,10 420,18 520,13 C 600,9 700,17 800,12 C 880,8 940,16 1000,11 L 1000,45 Z" fill="var(--bg-surface)"/>
+    <path d="M 0,45 L 0,16 C 80,13 160,20 260,15 C 340,10 420,18 520,13 C 600,9 700,17 800,12 C 880,8 940,16 1000,11 L 1000,45 Z" fill="var(--silhouette-fill)"/>
   </svg>
 
   <div class="hero-content">
@@ -372,6 +372,35 @@ import logoSrc from '../../assets/bit-voyager-white.svg?url';
     .company-name         { font-size: clamp(2.4rem, 10vw, 3.5rem); margin-bottom: 24px; }
     .name-text            { white-space: nowrap; }
     .cycle-line           { margin-bottom: 24px; }
+  }
+
+  /* ── Light mode hero overrides — sunrise ── */
+  :global(html.light) .hero-section {
+    background: linear-gradient(
+      to bottom,
+      #060312 0%,
+      #0d0527 14%,
+      #1a0a3c 26%,
+      #2d1060 37%,
+      #7c1d69 50%,
+      #c0392b 62%,
+      #e55c00 73%,
+      #f39c12 83%,
+      #fdeaa8 91%,
+      #f8fafc 100%
+    );
+    /* Keep hero text light against the dark/warm gradient */
+    --text-primary: #F1F5F9;
+    --text-muted: #94A3B8;
+    --border-subtle: rgba(255, 255, 255, 0.12);
+  }
+
+  :global(html.light) .star-canvas { display: none; }
+  :global(html.light) .glow-orb    { display: none; }
+  :global(html.light) .glow-horizon { display: none; }
+
+  :global(html.light) .scroll-indicator {
+    border-color: rgba(255, 255, 255, 0.3);
   }
 </style>
 
